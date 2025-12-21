@@ -1,0 +1,929 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+}
+
+#ingreso{
+display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f0f0f0;
+
+    position: relative;
+    background-image: url("images/fondocompu.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ingreso::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+#principal {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+
+    background-image: url("images/fondoprincipal.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#principal h1 {
+    margin-top: 0;
+}
+
+#principal p {
+    margin-bottom: 20px;
+}
+
+.indice {
+    background-color: #f7c6d9; /* rosita pastel */
+    padding: 30px 25px;
+    border-radius: 20px;
+    max-width: 420px;
+    width: 90%;
+
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fechacalendario {
+    width: 100%;          /* ocupa el ancho disponible */
+    max-width: 220px;     /* límite para que no sea gigante */
+    height: auto;         /* mantiene proporción */
+
+    display: block;       /* permite centrar */
+    margin: 15px auto;    /* espacio arriba/abajo y centrado */
+
+    border-radius: 15px;  /* bordes redondeados */
+
+
+}
+
+/*ANIMACIONES DE LA PAGINA PRINCIPAL*/ 
+
+.indice {
+    animation: aparecer 1.2s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu a {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu a:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fechacalendario {
+    animation: calendarioLatido 3s infinite;
+}
+
+@keyframes calendarioLatido {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+
+
+/* Recuadro del formulario */
+.ingreso {
+    background-color: #e0e0e0;
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Título */
+.ingreso h2 {
+    margin-bottom: 15px;
+}
+
+/* Input */
+#fecha {
+    width: 50%;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Pista */
+#pista {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Botón */
+button {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Error */
+#error {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+/* Quitar estilos por defecto de la lista */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Cada opción del menú */
+.menu li {
+    margin: 10px 0;
+}
+
+/* Estilo de los enlaces */
+.menu a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: #e57373;
+    color: black;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* Efecto simple al pasar el mouse (opcional pero lindo) */
+.menu a:hover {
+    background-color: #d65c5c;
+}
+
+#comonosconocimos {
+    padding: 40px 20px;
+
+    background-image: url("./images/fondocomonosconocimos.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}
+
+.comonosconocimos-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.primercuadrito {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px;
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+    text-align: center;
+}
+
+
+.cuadrito {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px;
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+}
+
+.cuadrito img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.comonosconocimos-texto h2 {
+    margin: 0 0 10px;
+}
+
+.comonosconocimos-texto p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.azul {
+    background-color: #dbeafe; /* azul suave */
+}
+
+.amarillo {
+    background-color: #fff4cc; /* amarillo suave */
+}
+
+/* ESTILOS DEL CERTIFICADO. */
+
+.texto-intro {
+    max-width: 90%;
+    padding: 0 10px;
+}
+
+/* ====== Página ====== */
+#carta-page {
+    background-color: #ffd9d4;
+    min-height: 100vh;
+    text-align: center;
+    font-family: serif;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.subtitulo {
+    margin-bottom: 20px;
+}
+
+/* ====== Carta ====== */
+.carta {
+    display: flex;
+    justify-content: center;
+}
+
+/* ====== Sobre ====== */
+.sobre {
+    width: 520px;
+    height: 360px;
+    background: #ffb3c6;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.7s ease;
+}
+
+/* ====== Solapa superior ====== */
+.solapa.superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 260px solid transparent;
+    border-right: 260px solid transparent;
+    border-top: 180px solid #ff8fab;
+    transform-origin: top;
+    transition: transform 0.7s ease;
+    z-index: 3;
+}
+
+/* ====== Solapas laterales ====== */
+.solapa.izquierda {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 180px solid transparent;
+    border-bottom: 180px solid transparent;
+    border-left: 260px solid #ff9ebb;
+}
+
+.solapa.derecha {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 180px solid transparent;
+    border-bottom: 180px solid transparent;
+    border-right: 260px solid #ff9ebb;
+}
+
+/* ====== Corazón ====== */
+.corazon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 26px;
+    z-index: 5;
+    transition: opacity 0.4s ease;
+}
+
+/* ====== Contenido ====== */
+.contenido {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.7s ease;
+    z-index: 1;
+}
+
+.contenido img {
+    width: 420px;
+    border-radius: 10px;
+}
+
+/* ====== Abierta ====== */
+.sobre.abierta {
+    height: 620px;
+}
+
+.sobre.abierta .solapa.superior {
+    transform: rotateX(180deg);
+}
+
+.sobre.abierta .corazon {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.sobre.abierta .contenido {
+    top: 20px;
+    opacity: 1;
+}
+
+/* ====== Botones ====== */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.botones button {
+
+    width: 70px;
+    height: 44px;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 0;
+    border: none;
+    background-color: #ff8fab;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pagina-certificado {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0
+}
+
+.titulo {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    line-height: 1.4;
+}
+
+#dedicatorias {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.cancion-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 👈 centra horizontalmente */
+  text-align: center;
+  background-color: #9f2f2f;
+  color: #fff;
+}
+
+.imagen-cancion img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+
+.titulo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.75;
+  margin-bottom: 30px;
+}
+
+.descripcion {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.boton-reproducir {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  background-color: rgba(255,255,255,0.9);
+  color: #9f2f2f;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.boton-reproducir:hover {
+  transform: scale(1.05);
+  background-color: #fff;
+}
+
+.separador {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    rgba(159, 47, 47, 1),
+    rgba(159, 47, 47, 0)
+  );
+}
+
+.top-canciones-contenido {
+    padding: 10px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.top-canciones {
+  background-image: url("./images/fondotopcanciones.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("./images/fondotopcanciones.jpg");
+}
+
+p {
+  margin-bottom: 2px;
+}
+
+.titulo-top {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2px;
+  color: #9f2f2f;
+}
+
+.subtitulo-top {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 60px;
+  color: #9f2f2f;
+  margin-top: 0;
+}
+
+.cancion {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.fila.normal {
+  flex-direction: row;
+}
+
+.fila.invertida {
+  flex-direction: row-reverse;
+}
+
+.cancion .texto {
+  flex: 1;
+}
+
+.cancion h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.cancion p {
+  font-family: 'Lora', serif;
+  line-height: 1.6;
+}
+
+.cancion .imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.cancion img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.razones-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+
+.titulo-razones {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.titulo-razones span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lista-razones {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.razon-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.numero {
+  font-size: 1.6rem;
+  font-family: 'Playfair Display', serif;
+  color: #444;
+  min-width: 30px;
+}
+
+.razon-item p {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+.linea {
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.cierre-razones {
+  text-align: center;
+  margin-top: 50px;
+  font-style: italic;
+  color: #555;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    .cuadrito {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cuadrito img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    #ingreso {
+        background-image: url("images/fondocelu.jpeg");
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* contenedor general */
+    .pagina-certificado {
+        height: 100dvh;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    /* sobre más chico */
+    .sobre {
+        width: 300px;
+        height: 200px;
+    }
+
+    .sobre.abierta {
+        height: 320px;
+    }
+
+    /* contenido (certificado) más chico */
+    .contenido img {
+        width: 240px;
+    }
+
+    /* botones siempre visibles */
+    .botones-sobre {
+        margin-bottom: 10px;
+        margin-top: 8px;
+    }
+}
+
+.primera-cita {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+/* ITEMS */
+.grid-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 0.8s ease forwards;
+}
+
+.grid-item:nth-child(1) { animation-delay: 0.1s; }
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }
+.grid-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* TEXTO */
+.grid-item.texto h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.grid-item.texto h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.grid-item.texto p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* IMAGEN */
+.grid-item.imagen img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* cuadradas */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.grid-item.imagen img {
+  filter: grayscale(100%);
+}
+
+.grid-item {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.grid-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* ANIMACIÓN */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .primera-cita {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .grid-item.texto p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+
+    .solapa.superior {
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-top: 100px solid #ff8fab;
+    }
+
+    .solapa.izquierda {
+        border-top: 100px solid transparent;
+        border-bottom: 100px solid transparent;
+        border-left: 150px solid #ff9ebb;
+    }
+
+    .solapa.derecha {
+        border-top: 100px solid transparent;
+        border-bottom: 100px solid transparent;
+        border-right: 150px solid #ff9ebb;
+    }
+}
+
+@media (max-width: 600px) {
+    html, body {
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .titulo {
+        font-size: 26px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .texto-intro {
+        max-width: 320px;
+        padding: 0 12px;
+    }
+}
+
+    @media (max-width: 600px) {
+
+    .cuadrito {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cuadrito .contenido-texto {
+        order: 1;
+    }
+
+    .cuadrito .imagen {
+        order: 2;
+        margin-top: 12px;
+    }
+
+    .cuadrito .imagen img {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 2.1rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .descripcion {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+}
+    
+@media (max-width: 768px) {
+  .cancion {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cancion .imagen {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cancion h3 {
+    font-size: 1.05rem;      /* antes más grande */
+    margin-bottom: 6px;      /* menos espacio */
+  }
+
+  .cancion p {
+    font-size: 0.9rem;       /* texto más compacto */
+    line-height: 1.4;        /* menos altura */
+  }
+
+  .cancion {
+    margin-bottom: 45px;     /* un poquito menos de separación */
+  }
+}
+
+@media (max-width: 768px) {
+  .cancion p {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo-razones {
+    font-size: 2rem;
+  }
+
+  .numero {
+    font-size: 1.4rem;
+  }
+
+  .razon-item p {
+    font-size: 0.95rem;
+  }
+}
+
