@@ -25,7 +25,7 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const fechaIngresada = inputFecha.value;
-    const fechaCorrecta = "21/10/25"; // 👈 cambiá la fecha acá
+    const fechaCorrecta = "21/09/25"; // 👈 cambiá la fecha acá
 
     if (fechaIngresada === fechaCorrecta) {
         window.location.href = "pages/principal.html";
