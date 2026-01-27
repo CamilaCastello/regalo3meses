@@ -22,6 +22,38 @@
         Espero que te guste. Te amo.
     </p>
 
+    <p id="contador-mes"></p>
+
+<script>
+  const hoy = new Date();
+
+  let anio = hoy.getFullYear();
+  let mes = hoy.getMonth(); // 0 = enero
+  const diaCumple = 21;
+
+  // Fecha objetivo: día 21 del mes actual
+  let proximoCumple = new Date(anio, mes, diaCumple);
+
+  // Si hoy ya pasó el 21, vamos al mes siguiente
+  if (hoy > proximoCumple) {
+    proximoCumple = new Date(anio, mes + 1, diaCumple);
+  }
+
+  // Diferencia en milisegundos
+  const diferencia = proximoCumple - hoy;
+
+  // Convertimos a días
+  const diasFaltantes = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+
+  // Mostrar resultado
+  const texto = diasFaltantes === 0
+    ? "💖 ¡Hoy cumplimos un mes más!"
+    : `⏳ Faltan ${diasFaltantes} días para cumplir otro mes juntitos`;
+
+  document.getElementById("contador-mes").innerText = texto;
+</script>
+
+
     <nav class="menu">
         <ul>
         <li><a href="como-nos-conocimos.html"><i class="fa-solid fa-heart"></i> Cómo nos conocimos</a></li>

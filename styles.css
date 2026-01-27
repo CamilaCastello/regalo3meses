@@ -654,10 +654,13 @@ p {
 }
 
 .days-container {
+  background-color: #f5f5f5;   /* gris clarito */
+  border: 1px solid #e0e0e0;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
 }
 
 .album-header {
@@ -677,15 +680,13 @@ p {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4);
   letter-spacing: 1px;
+
 }
 
 .day-box {
-  background-color: #f5f5f5;   /* gris clarito */
-  border: 1px solid #e0e0e0;
-  border-radius: 14px;
   padding: 14px;
   width: fit-content;          /* CLAVE */
-  max-width: 100%
+  max-width: 100%;
 }
 
 .day-title {
@@ -697,15 +698,19 @@ p {
 
 .gallery {
   display: flex;
-  flex-wrap: wrap;      /* bajan si no entran */
+  flex-wrap: wrap;    /* bajan si no entran */
   gap: 6px;
+
+
+  
 }
 
 
 .gallery img {
     width: 180px;
-    height: 100%;          /* respeta proporción */
-    border-radius: 6px;
+  height: 180px;        /* altura fija */
+  object-fit: cover;   /* recorta si es más alta */
+  border-radius: 6px;
     
 }
 
