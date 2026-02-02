@@ -724,18 +724,7 @@ p {
     .galeria { column-count: 2; }
 }
 
-    
-
-
-
-@media (max-width: 900px) {
-  .album-grid { column-count: 2; }
-}
-
-@media (max-width: 500px) {
-  .album-grid { column-count: 1; }
-}
-
+  
 
 
 
